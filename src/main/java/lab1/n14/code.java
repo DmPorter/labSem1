@@ -26,7 +26,9 @@ public class code {
             for (int i = 0; i < arr.size();i++ ){
                 sum_dig_two += arr.get(arr.size() - i - 1).get(i);
             }
-            if (SumRow(arr) == SumCol(arr) && SumCol(arr) == sum_dig_one && sum_dig_two == sum_dig_one)
+            int sumRow = SumRow(arr);
+            int sumCol = SumCol(arr);
+            if (sum_dig_two == sum_dig_one && SumRow(arr) == sumCol && sumCol == sum_dig_one )
                 System.out.println("Ok");
             else
                 System.out.println("Not ok");
