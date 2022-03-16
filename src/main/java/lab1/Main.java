@@ -10,47 +10,33 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-
-        double d = Integer.MAX_VALUE;
-        d++;
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println((int)(d));
-        System.out.println(d);
-    }
-
-
-
-    public static String DayOfWeek(double n){
-        if (n % 1 == 0)
-            switch ((int)n){
-                case 1:
-                    return "Monday";
-                case 2:
-                    return "Tuesday";
-                case 3:
-                    return "Wednesday";
-                case 4:
-                    return "Thursday";
-                case 5:
-                    return "Friday";
-                case 6:
-                    return "Saturday";
-                case 7:
-                    return "Sunday";
-                default:
-                    return "None";
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+        for (int i = 0; i < n; i++){
+            ArrayList<Integer> line = new ArrayList<>();
+            line.add(0, 1);
+            if (i != 0) {
+                for (int j = 1; j < i; j++) {
+                    int m = arr.get(i - 1).get(j - 1) + arr.get(i - 1).get(j);
+                    line.add(m);
+                }
+                line.add(1);
             }
-        else return "None";
-    }
-
-    public static long factorial(int n){
-        long res = 1;
-        if(n == 0)
-            return 1;
-        for (int i = 1; i <= n; i++){
-            res *= i;
+            arr.add(line);
         }
-        return res;
+        int j =n;
+        for (ArrayList<Integer> line : arr){
+            for (int i = 1; i<j; i++){
+                System.out.print ("\t");
+            }
+
+            for (int i : line){
+                System.out.printf("\t%12d", i);
+            }
+            j--;
+            System.out.println();
+        }
     }
 }

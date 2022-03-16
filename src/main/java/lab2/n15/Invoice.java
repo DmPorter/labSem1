@@ -21,15 +21,13 @@ public class Invoice {
         items.add(newltem);
     }
 
-    public String getInvoce(){
-        StringBuilder str = new StringBuilder();
-        str.append("№\tItem\tQuantity\tPrice\tTotal Price\n");
+    public void getInvoce(){
+
+        System.out.printf("%-2s | %-16s | %-10s | %-10s | %-10s\n", "№", "Item", "Quantity", "Price", "Total Price");
 
         for(int i = 0; i < this.items.size(); i++){
-            String new_line = "" + (i+1) + "\t" + this.items.get(i).description + "\t" + this.items.get(i).quantity + "\t" + this.items.get(i).unitPrice + "\t" + this.items.get(i).price() + "\n";
-            str.append(new_line);
+            System.out.format("%-2d | %-16s | %-10d | %-10.2f | %-10.2f\n", (i + 1),  this.items.get(i).description, this.items.get(i).quantity, this.items.get(i).unitPrice, this.items.get(i).price());
         }
-        return str.toString();
     }
     }
 

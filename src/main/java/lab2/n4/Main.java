@@ -1,6 +1,6 @@
 package lab2.n4;
 
-public class code {
+public class Main {
 
     public static void main(String[] args) {
         Integer a = 2;
