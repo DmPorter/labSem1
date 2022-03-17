@@ -10,7 +10,7 @@ public class Invoice {
         double unitPrice;
         double price() { return quantity * unitPrice; }
     }
-    private ArrayList<Item> items = new ArrayList<> () ;
+    private final ArrayList<Item> items = new ArrayList<> () ;
 
     public void addltem(String description, int quantity,
                         double unitPrice) {

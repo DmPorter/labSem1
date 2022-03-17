@@ -1,6 +1,7 @@
 package lab2.n10;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -13,6 +14,7 @@ public class Main {
             add(2);
             add(3);
         }};
+
 
         ArrayList<Integer> list_null = new ArrayList<>();
 

@@ -20,11 +20,17 @@ public class code {
             }
             arr.add(line);
         }
+        int j =n;
         for (ArrayList<Integer> line : arr){
-            for (int i : line){
-                System.out.printf("%5d", i);
+            for (int i = 0; i<j; i++){
+                System.out.print ("      ");
             }
+            for (int i : line){
+                System.out.printf("%12d", i);
+            }
+            j--;
             System.out.println();
         }
     }
 }
+
