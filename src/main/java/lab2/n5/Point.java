@@ -38,12 +38,12 @@ public class Point {
 
     /**
      * Смешает точку на заданные координаты
-     * @param x_t смещение координаты x
-     * @param y_t смещение координаты y
+     * @param x смещение координаты x
+     * @param y смещение координаты y
      * @return новый объект класса(точка, которая смещена)
      */
-    public Point translate(double x_t, double y_t){
-        return new Point(this.x + x_t, this.y + y_t);
+    public Point translate(double x, double y){
+        return new Point(this.x + x, this.y + y);
     }
 
     /**

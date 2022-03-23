@@ -2,15 +2,14 @@ package lab2.n16;
 
 public class Queue {
 
-    Node first;
-    Node last;
+    private Node first;
+    private Node last;
 
-    void add(String str){
+    public void add(String str){
         Node item = new Node(str);
 
         if(this.last == null){
             this.last = this.first = item;
-
             return;
         }
 
@@ -19,9 +18,9 @@ public class Queue {
     }
 
 
-    void remove(){
+    public Node remove(){
         if(this.first == null){
-            return;
+            return null;
         }
 
         Node item = this.first;
@@ -32,15 +31,16 @@ public class Queue {
         if(this.first == null)
             this.last = null;
 
+        return item;
     }
 
-    Iterator iterator(){
+    public Iterator iterator(){
         return new Iterator();
     }
 
-    static class Node{
-        String item;
-        Node next = null;
+    private static class Node{
+        private String item;
+        private Node next = null;
 
         Node(String item){this.item = item;}
 
@@ -61,21 +61,28 @@ public class Queue {
         }
         return str.toString();
     }
-    class Iterator{
-        Node item;
+
+    public class Iterator{
+        private Node item;
 
         Iterator(){
             this.item = first;
         }
 
-        Node next(){
+        public Node next(){
+            if (item == null)
+                return null;
             Node a = item;
-            item = item.next;
+            if (hasNext())
+                item = item.next;
+            else{
+                item = null;
+            }
             return a;
         }
 
-        boolean hasNext(){
-            return this.item != null && this.item.next != null;
+        public boolean hasNext(){
+            return this.item.next != null;
         }
     }
 }

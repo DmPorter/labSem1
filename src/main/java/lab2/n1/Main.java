@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         LocalDate date = LocalDate.of(2022, 3, 1);
         int monthValue = date.getMonthValue();
+        System.out.println(monthValue);
         for (int i = 1; i < date.getDayOfWeek().getValue() + 1; i++) {
             System.out.print("   ");
         }

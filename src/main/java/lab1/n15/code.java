@@ -26,7 +26,7 @@ public class code {
                 System.out.print ("      ");
             }
             for (int i : line){
-                System.out.printf("%12d", i);
+                System.out.printf("%-12d", i);
             }
             j--;
             System.out.println();
