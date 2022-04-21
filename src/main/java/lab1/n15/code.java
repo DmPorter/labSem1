@@ -20,6 +20,7 @@ public class code {
             }
             arr.add(line);
         }
+
         int j =n;
         for (ArrayList<Integer> line : arr){
             for (int i = 0; i<j; i++){

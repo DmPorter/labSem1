@@ -16,7 +16,7 @@ public class Network {
         }
 
         public void leave() {
-            Network.this.members.remove(this);
+            members.remove(this);
         }
 
         public boolean belongsTo(Network n) {

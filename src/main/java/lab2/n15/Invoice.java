@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Invoice {
 
-    private static class Item { // Класс Item вложен в класс Invoice
+    public static class Item {
         String description;
         int quantity;
         double unitPrice;
@@ -12,13 +12,13 @@ public class Invoice {
     }
     private final ArrayList<Item> items = new ArrayList<> () ;
 
-    public void addltem(String description, int quantity,
+    public void addItem(String description, int quantity,
                         double unitPrice) {
-        Item newltem = new Item();
-        newltem.description = description;
-        newltem.quantity = quantity;
-        newltem.unitPrice = unitPrice;
-        items.add(newltem);
+        Item newItem = new Item();
+        newItem.description = description;
+        newItem.quantity = quantity;
+        newItem.unitPrice = unitPrice;
+        items.add(newItem);
     }
 
     public void getInvoce(){

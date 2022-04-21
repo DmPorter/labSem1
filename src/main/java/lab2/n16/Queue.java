@@ -65,7 +65,7 @@ public class Queue {
     public class Iterator{
         private Node item;
 
-        Iterator(){
+        public Iterator(){
             this.item = first;
         }
 
