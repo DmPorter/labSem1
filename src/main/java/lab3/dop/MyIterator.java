@@ -16,17 +16,7 @@ public class MyIterator<T> implements MyIteratorInterface<T> {
     }
 
     static <T> MyIterator<T> fromIterator(Iterator<T> iterator){
-        return new MyIterator<T>(){
-            @Override
-            public T next(){
-                return iterator.next();
-            }
-
-            @Override
-            public boolean hasNext(){
-                return iterator.hasNext();
-            }
-        };
+        return (MyIterator<T>) MyIteratorInterface.fromIterator(iterator);
     }
 
     public <TO> MyIterator<TO> map(Function<T, TO> function){

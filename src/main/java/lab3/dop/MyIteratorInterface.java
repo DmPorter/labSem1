@@ -10,6 +10,21 @@ interface MyIteratorInterface<T> {
 
     boolean hasNext();
 
+
+    static <T> MyIteratorInterface<T> fromIterator(Iterator<T> iterator){
+        return new MyIteratorInterface<T>(){
+            @Override
+            public T next(){
+                return iterator.next();
+            }
+
+            @Override
+            public boolean hasNext(){
+                return iterator.hasNext();
+            }
+        };
+    }
+
     default <TO> MyIteratorInterface<TO> map(Function<T, TO> function){
         MyIteratorInterface<T> it = this;
         return new MyIteratorInterface<TO>() {
