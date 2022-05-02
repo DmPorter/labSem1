@@ -4,14 +4,10 @@ import lab3.IntSequence;
 
 public class Main {
     public static void main(String[] args) {
-//        IntSequence c = IntSequence.constant(2);
-//        while(c.hasNext()){
-//            System.out.println(c.next());
-//        }
-
-        IntSequence c1 = IntSequence.constantLambda(2);
-        while(c1.hasNext()){
-            System.out.println(c1.next());
+        IntSequence arr = IntSequence.of(2,3,4,5,6,7,8);
+        while(arr.hasNext()){
+            System.out.println(arr.next());
         }
     }
+
 }

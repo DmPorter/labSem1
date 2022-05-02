@@ -23,22 +23,17 @@ public class Main {
 
         for (int i = 0; i < count; i++) {
             String x = String.valueOf(i + 1);
-            list.add(() -> {
-                for (int j = 0; j < 1000; j++) {
-                }
-                System.out.println(x);
-            });
+            list.add(() -> System.out.println(x));
         }
 
         return list.toArray(new Runnable[]{});
     }
 
-    private static void runTogether(Runnable... tasks) throws Exception {
+    private static void runTogether(Runnable... tasks) {
         ExecutorService exec = Executors.newFixedThreadPool(tasks.length);
         for (Runnable task : tasks) {
             exec.execute(task);
         }
-        exec.awaitTermination(1, TimeUnit.SECONDS);
         exec.shutdown();
     }
 

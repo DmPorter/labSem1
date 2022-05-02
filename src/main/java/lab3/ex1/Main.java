@@ -1,13 +1,14 @@
 package lab3.ex1;
 
+import lab3.Employee;
 import lab3.Measurable;
 
 public class Main {
     public static void main(String[] args) {
         Measurable[] employees = {
-//                new Employee(1000),
-//                new Employee(2000),
-//                new Employee(3000)
+                new Employee(1000),
+                new Employee(2000),
+                new Employee(3000)
         };
 
         System.out.println(average(employees));
