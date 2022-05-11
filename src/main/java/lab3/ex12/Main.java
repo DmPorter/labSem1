@@ -2,7 +2,6 @@ package lab3.ex12;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
@@ -15,7 +14,7 @@ public class Main {
 
     private static void sortDirWithLambda(File[] files) {
         Arrays.sort(files, (a, b) -> {
-            if(a.isFile() && b.isFile())
+            if(a.isFile() && b.isFile() || !a.isFile() && !b.isFile())
                 if(a.compareTo(b) > 0){
                     return 1;
                 }else if(a.compareTo(b) < 0) {
@@ -28,4 +27,9 @@ public class Main {
     }
 
 
-}
+    }
+
+
+
+
+

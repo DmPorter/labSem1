@@ -13,23 +13,26 @@ public class Main {
             add(5);
         }};
 
-        MyIterator<Integer> it = MyIterator.fromIterator(arr.iterator());
-        MyIterator<Integer> itMap = it.map((a) -> a*a*a);
+        MyIteratorInterface<Integer> iter = MyIteratorInterface.fromIterator(arr.iterator());
+        MyIteratorInterface<Double> itMap = iter.map((a) -> Math.pow(a, 3));
 
+//        MyIterator<Integer> it = (MyIterator<Integer>) MyIteratorInterface.fromIterator(arr.iterator());
+////        MyIterator<Integer> itMap = (MyIterator<Integer>)it.map((a) -> a*a*a);
+//
         while(itMap.hasNext()){
             System.out.println(itMap.next());
         }
 
         System.out.println();
-        MyIterator<Integer> it1 = MyIterator.fromIterator(arr.iterator());
-        MyIterator<Double> itMapSqrt = it1.map(Math::sqrt);
+        MyIteratorInterface<Integer> it1 = MyIteratorInterface.fromIterator(arr.iterator());
+        MyIteratorInterface<Double> itMapSqrt = it1.map(Math::sqrt);
 
         while (itMapSqrt.hasNext()){
             System.out.println(itMapSqrt.next());
         }
 
         System.out.println();
-        MyIterator<Integer> it2 = MyIterator.fromIterator(arr.iterator());
+        MyIteratorInterface<Integer> it2 = MyIteratorInterface.fromIterator(arr.iterator());
         it2.forEach((a) -> {
             a *= 2;
             System.out.println(a);
@@ -37,7 +40,7 @@ public class Main {
 
 
         System.out.println();
-        MyIterator<Integer> it3 = MyIterator.fromIterator(arr.iterator());
+        MyIteratorInterface<Integer> it3 = MyIteratorInterface.fromIterator(arr.iterator());
         it3.forEach(System.out::println);
 
 

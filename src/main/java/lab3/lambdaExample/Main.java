@@ -17,19 +17,20 @@ public class Main {
 //
 //        String s = "o";
 //        Runnable r = () -> System.out.println(s += "lolo");
-//
-//        int[] a = { 1 };
-//        Runnable r1 = () -> System.out.println(a[0]++);
-//        a[0]--;
-//
-//        StringBuilder str = new StringBuilder("asdasd");
-//
-//        str.append("1234");
-//        Runnable r2 = () -> System.out.println(str);
-//
-//
-//        Runnable r3 = () -> System.out.println(str.append("sssss"));
 
+        int[] a = { 1 };
+        Runnable r1 = () -> System.out.println(a[0]++);
+        a[0]--;
+
+        StringBuilder str = new StringBuilder("asdasd");
+
+        str.append("1234");
+        Runnable r2 = () -> System.out.println(str);
+
+
+        Runnable r3 = () -> System.out.println(str.append("sssss"));
+        new Thread(r2).start();
+        new Thread(r3).start();
     }
 
 

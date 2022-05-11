@@ -18,7 +18,7 @@ public class Main {
             add("ad");
         }};
         System.out.println(strings);
-        luckySort(strings, Comparator.comparing(String::length));
+        luckySort(strings, Comparator.comparing(String::length).thenComparing(String::compareTo));
         System.out.println(strings);
     }
 
