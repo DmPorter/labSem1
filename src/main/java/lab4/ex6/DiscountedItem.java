@@ -14,7 +14,7 @@ public class DiscountedItem extends Item{
     public boolean equals(Object o) {
         if (!super.equals(o)) return false;
         if (o.getClass() == Item.class) {
-            return true;
+            return super.equals(o);
         }
         DiscountedItem that = (DiscountedItem) o;
         return Double.compare(that.discount, discount) == 0;
